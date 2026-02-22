@@ -1,7 +1,7 @@
 // exercise4.js
 const editList = document.querySelector('#edit-list');
 editList.addEventListener('dblclick', function(event) {
- // 1. Find closest .edit-
+ // 1. Find closest .edit-item  
  // item from event.target; return if null
     const item = event.target.closest('.edit-item');
     if (!item) return;
@@ -32,13 +32,15 @@ editList.addEventListener('dblclick', function(event) {
  // 6. Listen for 'keydown' on input
  // Enter -> commitEdit()
  // Escape -> cancelEdit()
-    input.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            commitEdit();
-        } else if (event.key === 'Escape') {
-            cancelEdit();
-        }
-    });
+input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        commitEdit();
+        input.removeEventListener('blur',commitEdit);
+    } else if (event.key === 'Escape') {
+        cancelEdit();
+        input.removeEventListener('blur',commitEdit);
+    }
+});
  // 7. Listen for 'blur' on input -> commitEdit()
     input.addEventListener('blur', commitEdit);
 });
