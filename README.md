@@ -1,0 +1,2 @@
+this lab is about delegation, closet(), and matches()
+This project explores how to build interactive user interfaces using **event delegation**, `closest()`, and `matches()`. Instead of attaching multiple listeners to individual elements, we use a single parent listener to handle events efficiently. The lab demonstrates how these techniques make code leaner, more maintainable, and easier to extend.
