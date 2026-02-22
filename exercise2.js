@@ -1,7 +1,7 @@
 // exercise2.js
 const tagInput = document.querySelector('#tag-input');
 const tagContainer = document.querySelector('#tag-container');
-// -- Add a tag when Enter is pressed --
+// -- Add a tag when Enter is press --
 tagInput.addEventListener('keydown', function(event) {
  if (event.key !== 'Enter') return;
  const value = tagInput.value.trim();
